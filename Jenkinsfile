@@ -5,7 +5,7 @@ pipeline {
         stage('Read File') {
             steps {
                 script {
-                    def fileContent = readFile('example.txt')
+                    def fileContent = readFile('package.json')
                     echo "File content:"
                     echo fileContent
                 }
