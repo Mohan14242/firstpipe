@@ -7,7 +7,7 @@ pipeline {
                 script {
                     def fileContent = readFile('package.json')
                     echo "File content:"
-                    echo fileContent
+                    echo fileContent["version"]
                     
                 }
             }
