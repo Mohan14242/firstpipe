@@ -2,13 +2,12 @@ pipeline {
     agent any
 
     stages {
-        stage('Read Version') {
+        stage('Read File') {
             steps {
                 script {
-                    def fileContent = readFile('package.json')
-                    def json = readJSON text: fileContent
-                    def version = json.version
-                    echo "Version: ${version}"
+                    def fileContent = readFile('example.txt')
+                    echo "File content:"
+                    echo fileContent
                 }
             }
         }
