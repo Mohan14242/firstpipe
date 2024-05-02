@@ -15,6 +15,10 @@ pipeline {
                     echo "Version: ${version}"
                     echo " the name ${name}"
                     echo " the environemtn ${environment}"
+
+                    if (environemtn == "web"){
+                        println("here we are deplying to  the dev env")
+                    }
                 }
             }
         }
