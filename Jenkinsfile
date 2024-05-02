@@ -5,9 +5,8 @@ pipeline {
         stage('Read File') {
             steps {
                 script {
-                    def fileContent = readFile('package.json')
-                    echo "File content:"
-                    echo fileContent["version"]
+                   props = readJSON file: 'package.json'
+                   echo props.version
                     
                 }
             }
