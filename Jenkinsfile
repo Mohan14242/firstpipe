@@ -2,12 +2,13 @@ pipeline {
     agent any
 
     stages {
-        stage('Read File') {
+        stage('Read Version') {
             steps {
                 script {
-                   def props = readJSON file: 'package.json'
-                   echo props.version
-                    
+                    def fileContent = readFile('package.json')
+                    def json = readJSON text: fileContent
+                    def version = json.version
+                    echo "Version: ${version}"
                 }
             }
         }
