@@ -2,12 +2,15 @@ pipeline {
     agent any
 
     stages {
-        stage('Version') {
-            steps{
-                script{
-                def env.Version=readJSON(file: 'package.json').version
-                }
+        
+        stage('Read JSON (Recommended)') {
+            steps {
+                def jsonData = readJSON file: 'package.json'
+                // Access data from map
+                println "Environment: ${jsonData['name']}"
+            
             }
-    }
+        }
+        // Add other pipeline stages here...
     }
 }
