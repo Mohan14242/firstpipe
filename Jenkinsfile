@@ -8,7 +8,7 @@ pipeline {
                     // Read the content of the file and parse it as JSON
                     def jsonData = readFile('package.json')
 
-                    echo jsonData
+                    echo jsonData["version"]
                     
                     // Access data from the parsed JSON map
                     
