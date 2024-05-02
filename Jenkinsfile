@@ -10,7 +10,11 @@ pipeline {
 
                     // Access the 'version' field from the parsed JSON map
                     def version = jsonData.version
+                    def name=jsonData.name 
+                    def environment=jsonData.environment
                     echo "Version: ${version}"
+                    echo " the name ${name}"
+                    echo " the environemtn ${environment}"
                 }
             }
         }
