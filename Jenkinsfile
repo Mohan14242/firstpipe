@@ -5,13 +5,15 @@ pipeline {
         stage('Read JSON (Recommended)') {
             steps {
                 script {
-                    // Read the content of the file and parse it as JSON
-                    def jsonData = readFile('package.json')
+                    // Read the content of the file as a string
+                    def fileContent = readFile('package.json')
 
-                    echo jsonData["version"]
-                    
-                    // Access data from the parsed JSON map
-                    
+                    // Parse the string content as JSON
+                    def jsonData = readJSON text: fileContent
+
+                    // Access the 'version' field from the parsed JSON map
+                    def version = jsonData.version
+                    echo "Version: ${version}"
                 }
             }
         }
