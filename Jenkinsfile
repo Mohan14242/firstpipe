@@ -1,25 +1,25 @@
 pipeline {
-    environment{
-        //here if you create any variable you will have global access, since it is environment no need of def
+    environment {
+        // Here if you create any variable you will have global access, since it is environment no need of def
         packageVersion = ''
     }
+    agent any
     stages {
-        stage('Get version'){
-            steps{
-                script{
-                    def packageJson = readJSON(file: 'package.json')
+        stage('Get version') {
+            steps {
+                script {
+                    def packageJson = readJSON file: 'package.json'
                     packageVersion = packageJson.version
-                    echo "version: ${packageVersion}"
+                    echo "Version: ${packageVersion}"
                 }
             }
         }
-        stage("printing the vseerionvv"){
-            steps{
-                script{
-                    echo "the version is $packageVersion"
+        stage("Printing the version") {
+            steps {
+                script {
+                    echo "The version is ${packageVersion}"
                 }
             }
         }
     }
-
 }
