@@ -14,5 +14,13 @@ pipeline {
                 }
             }
         }
+        stage("printing the vseerionvv"){
+            steps{
+                script{
+                    echo "the version is $packageVersion"
+                }
+            }
+        }
     }
+
 }
