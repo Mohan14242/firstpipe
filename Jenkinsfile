@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     // Read the content of the file and parse it as JSON
-                    def jsonData = readfile('example.txt')
+                    def jsonData = readFile('example.txt')
                     
                     // Access data from the parsed JSON map
                     
