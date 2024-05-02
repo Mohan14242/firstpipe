@@ -3,7 +3,11 @@ pipeline {
 
     stages {
         stage('Version') {
-            env.Version=readJSON(file: 'package.json').version
+            steps{
+                script{
+                def env.Version=readJSON(file: 'package.json').version
+                }
+            }
     }
     }
 }
