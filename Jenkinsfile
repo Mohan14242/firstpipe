@@ -9,11 +9,7 @@ pipeline {
                     def fileContent = readFile('package.json')
 
                     // Parse the string content as JSON
-                    def jsonData = readJSON text: fileContent
-
-                    // Access the 'version' field from the parsed JSON map
-                    def version = jsonData.version
-                    echo "Version: ${version}"
+                   echo fileContent["version"]
                 }
             }
         }
