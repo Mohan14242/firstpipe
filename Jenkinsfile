@@ -6,7 +6,7 @@ pipeline {
         stage('Read JSON (Recommended)') {
             steps {
                 script{
-                    def jsonData = readJSON file: 'package.json'
+                    def jsonData = readJSON('package.json')
                 // Access data from map
                     
                 }
