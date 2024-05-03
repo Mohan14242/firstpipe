@@ -26,7 +26,7 @@ pipeline {
         stage("running the dowstream job"){
             steps{
                 script{
-                    build job: "../pipeline2" , wait:true
+                    build job: "pipeline2" , wait:true
                 }
             }
         }
