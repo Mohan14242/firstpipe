@@ -1,10 +1,8 @@
 pipeline {
-
     agent any
     environment {
         version=''
     }
-
     stages {
         stage('Read JSON (Recommended)') {
             steps {
@@ -27,16 +25,13 @@ pipeline {
                 }
             }
         }
-
-
-        stage("printign the version"){
-            steps{
-                script{
+        stage("printing the version") {
+            steps {
+                script {
                     echo "${version}"
                 }
             }
         }
-
         // Add other pipeline stages here...
     }
 }
