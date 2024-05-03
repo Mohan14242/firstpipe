@@ -30,7 +30,7 @@ pipeline {
                     string(name: 'PARAMETER_NAME', value:"${version}")
                    ]
 
-                   build job= "pipeline2",wait:true,parameters=parameters
+                   build job= "pipeline2",wait:true,parameters:parameters
 
 
                 }
