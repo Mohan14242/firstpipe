@@ -26,9 +26,11 @@ pipeline {
         stage("running the dowstream job"){
             steps{
                 script{
-                    def downstreamOutput = build job: "pipeline2", wait: true, propagate: true, returnStdout: true
-                    echo "Console output of downstream job:"
-                    echo downstreamOutput
+                   def parameters=[
+                    string(name: 'PARAMETER_NAME', value:"${version}")
+                   ]
+
+                   build job= "pipeline2",wait:true,parameters=parameters
 
 
                 }
