@@ -22,6 +22,14 @@ pipeline {
                 }
             }
         }
+
+        stage("running the dowstream job"){
+            steps{
+                script{
+                    build job: "../pipeline2" , wait=true
+                }
+            }
+        }
         // Add other pipeline stages here...
     }
 }
