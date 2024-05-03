@@ -1,5 +1,9 @@
 pipeline {
+
     agent any
+    environment {
+        version=''
+    }
 
     stages {
         stage('Read JSON (Recommended)') {
