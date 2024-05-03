@@ -23,6 +23,16 @@ pipeline {
                 }
             }
         }
+
+
+        stage("printign the version"){
+            steps{
+                script{
+                    echo $version
+                }
+            }
+        }
+
         // Add other pipeline stages here...
     }
 }
