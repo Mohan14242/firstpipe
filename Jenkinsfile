@@ -8,7 +8,7 @@ pipeline {
                 script {
                     def param1 = "value1"
                     def param2 = "value2"
-                    def result = mySharedFunction.call(param1, param2)
+                    def result = call(param1, param2)
                     println "Result: ${result}"
                 }
             }
