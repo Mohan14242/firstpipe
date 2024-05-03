@@ -27,7 +27,9 @@ pipeline {
             steps{
                 script{
                    def parameter=[
-                    string(name: 'mohan', value:"$version")
+                    string(name: "param1", defaultValue: "default_value1", description: "Parameter 1 description")
+                    choice(name: "param2", choices: ["option1", "option2", "option3"], description: "Parameter 2 description")
+                    booleanParam(name: "param3", defaultValue: true, description: "Parameter 3 description")
                    ]
 
                    build job: "pipeline2",wait:true,parameters:parameter
