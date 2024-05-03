@@ -1,4 +1,6 @@
 @Library('roboshop') _
 
-chiru.call()
-mohan.fuck()
+def name="mohan"
+
+chiru.call(name)
+mohan.fuck(name)
