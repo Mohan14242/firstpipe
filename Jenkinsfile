@@ -26,7 +26,10 @@ pipeline {
         stage("running the dowstream job"){
             steps{
                 script{
-                    build job: "pipeline2", wait: true, propagate: true, returnStdout: true
+                    def downstreamOutput = build job: "../pipeline2", wait: true, propagate: true, returnStdout: true
+                    echo "Console output of downstream job:"
+                    echo downstreamOutput
+
 
                 }
             }
