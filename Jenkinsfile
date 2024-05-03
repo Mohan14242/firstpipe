@@ -2,5 +2,10 @@
 
 def name="mohan"
 
-chiru.call(name)
-mohan.fuck(name)
+def person = [
+    'name': 'John',
+    'age': 30,
+    'city': 'New York'
+]
+
+chiru.details(person)
