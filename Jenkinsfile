@@ -32,7 +32,7 @@ pipeline {
         stage("printign the version"){
             steps{
                 script{
-                    echo $version
+                    echo "${version}"
                 }
             }
         }
